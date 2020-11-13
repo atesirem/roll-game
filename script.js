@@ -32,7 +32,6 @@ const init = function () {
     scores[1]=0;
     document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
     document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');
-    console.log(scores);
     
   }
 const switchPlayer = function () {
@@ -75,13 +74,11 @@ btnHold.addEventListener('click',function(){
 
     if(playing){
         scores[activePlayer] += currentScore;
-        console.log(scores);
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
     if(scores[activePlayer] >= 100){
         playing = false;
         diceEl.classList.add('hidden');
-        console.log(document.querySelector(`.player--${activePlayer}`));
         document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
         current0EL.textContent=0;
